@@ -59,6 +59,8 @@ public void iniciarMenu() { //metodo
     System.out.println("7. Espacios libres de la agenda");
     System.out.println("8. Sair de la libreria");
     int opcion = teclado.nextInt();
+    teclado.nextLine();
+
     switch (opcion) {
       case 1: //agregar un cotacto
         System.out.println("Ahora debes escribir los siguientes datos");
@@ -91,6 +93,13 @@ public void iniciarMenu() { //metodo
         System.out.println("Por favor ingresa el nombre del contacto que quieres buscar ");
         String nombreBus = teclado.nextLine();
         Contacto contactoBuscado = miprimerAgenda.buscarContacto(nombreBus);
+        if (contactoBuscado != null) {
+          System.out.println("Contacto encontrado:");
+          System.out.println("Nombre: " + contactoBuscado.getNombre());
+          System.out.println("Teléfono: " + contactoBuscado.getTelefono());
+        } else {
+          System.out.println("El contacto no existe en la agenda.");
+        }
           break;
       case 3://Mostrar la agenda completa
         System.out.println("Listado de contactos:");
@@ -100,7 +109,13 @@ public void iniciarMenu() { //metodo
       case 4://Verificar si existe un contacto
         System.out.println("Ingrese el nombre del contacto a verificar:");
         nombreContacto = teclado.nextLine();
-        Contacto contatobuscado = miprimerAgenda.buscarContacto(nombreContacto);
+        Contacto contatobuscado = miprimerAgenda.buscarContacto(nombreContacto);//esto solo me da un contacto o un null debo validarlo con un if
+
+        if (contatobuscado != null) {
+          System.out.println("El contacto existe en la agenda.");
+        } else {
+          System.out.println("El contacto no existe en la agenda.");
+        }
         break;
       case 5://  Eliminar un contacto
         System.out.println("Ingrese el nombre del contacto a eliminar:");
@@ -110,7 +125,7 @@ public void iniciarMenu() { //metodo
         break;
       case 6:  //Verificar si la agenda esta llena
         if(miprimerAgenda.agendaLlena()){
-          System.out.println("la agenda esta llena");
+          System.out.println("la agenda esta llena, hay ");
         }else{
           System.out.println("la agenda no esta llena, puedes agregar mas contactos");
         }
@@ -118,9 +133,10 @@ public void iniciarMenu() { //metodo
 
       case 7: //  Espacios libres de la agenda
         String espacios=miprimerAgenda.espaciosLibres();
+        System.out.println(espacios);
         break;
       case 8://salir
-        System.out.println("estas saliendo del programa, gracias por utilizar la agenda del equipo 8 ");
+        System.out.println("Estas saliendo del programa, gracias por utilizar la agenda del equipo 8 ");
         teclado.close();
         return;
       default:

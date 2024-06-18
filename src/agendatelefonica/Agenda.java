@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Agenda {
 
-
   private ArrayList<Contacto>contacto;
   private static final int numeroMaximo=10;
 
@@ -31,8 +30,8 @@ public class Agenda {
       System.out.println("el contacto ya existe, no se puede añadir ");
       return false;
     }//si al pasar los dos if realmente no entra entonces que se agrege
-      contacto.add(c);
-      System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
+    contacto.add(c);
+    System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
     return true;
   }
 
@@ -43,10 +42,8 @@ public class Agenda {
       for (Contacto c : contacto) {
         System.out.println("nombre de contacto: "+c.getNombre().toUpperCase()+" numero de contacto: "+c.getTelefono());
       }
-
-
     }
-
+  }
 
   public Contacto buscarContacto(String nombre) {
     for (Contacto t : contacto) {
@@ -58,44 +55,20 @@ public class Agenda {
   }
 
   public boolean eliminarContacto(Contacto c){
-      if(contacto.remove(c)){
-        System.out.println("el contacto ha sido eliminado con exito.");
-        return true;
-      }else {
-        System.out.println("el contacto no ha sido encontrado, verifique si existe");
-        return false;
-      }
+    if(contacto.remove(c)){
+      System.out.println("el contacto ha sido eliminado con exito.");
+      return true;
+    }else {
+      System.out.println("el contacto no ha sido encontrado, verifique si existe");
+      return false;
     }
+  }
   public String espaciosLibres(){
     if(contacto.size()<numeroMaximo){
-      return "el numero de espcios que queda son: "+(numeroMaximo-contacto.size());
+      return "el numero de espacios que quedan son: "+(numeroMaximo-contacto.size());
     }else {
-     return "no hay espacios disponibles";
+      return "no hay espacios disponibles";
     }
   }
 
-  }
-
-
-   
-    // Método para buscar un contacto por nombre
-    public void buscarContacto(String nombre) {
-        for (Contacto t : contactos) {
-            if (t.getNombre().equalsIgnoreCase(nombre)) {
-                System.out.println("El teléfono de " + nombre + " es: " + t.getTelefono());
-                return; // Contacto encontrado, termina el método
-            }
-        }
-        System.out.println("No se encontró el contacto, verifica si existe");
-    }
-
-    // Método para verificar espacios libres
-    public void espaciosLibres() {
-        int espaciosLibres = NUMERO_MAXIMO - contactos.size();
-        if (espaciosLibres > 0) {
-            System.out.println("El número de espacios que queda son: " + espaciosLibres);
-        } else {
-            System.out.println("No hay espacios disponibles");
-        }
-    }
 }
