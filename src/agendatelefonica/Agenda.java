@@ -13,6 +13,10 @@ public class Agenda {
 
   //metodos: añadirContacto(Contacto c), existeContacto(Conctacto c): ,listarContactos(): , buscaContacto(String nombre): ,eliminarContacto(Contacto c): ,agendaLlena():,espacioLibres ()
 
+  public int getNumeroContactos() {
+    return contacto.size();
+  }
+
   public boolean agendaLlena(){
     return contacto.size()>=numeroMaximo; //numero maximo lo definiarriba como 10, esto devolvera un true o false acorde a la cantidad de elementos del arralist
   }
