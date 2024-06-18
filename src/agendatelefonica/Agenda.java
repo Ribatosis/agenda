@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Agenda {
 
+
   private ArrayList<Contacto>contacto;
   private static final int numeroMaximo=10;
 
@@ -42,8 +43,10 @@ public class Agenda {
       for (Contacto c : contacto) {
         System.out.println("nombre de contacto: "+c.getNombre().toUpperCase()+" numero de contacto: "+c.getTelefono());
       }
+
+
     }
-  }
+
 
   public Contacto buscarContacto(String nombre) {
     for (Contacto t : contacto) {
@@ -74,16 +77,25 @@ public class Agenda {
   }
 
 
+   
+    // Método para buscar un contacto por nombre
+    public void buscarContacto(String nombre) {
+        for (Contacto t : contactos) {
+            if (t.getNombre().equalsIgnoreCase(nombre)) {
+                System.out.println("El teléfono de " + nombre + " es: " + t.getTelefono());
+                return; // Contacto encontrado, termina el método
+            }
+        }
+        System.out.println("No se encontró el contacto, verifica si existe");
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    // Método para verificar espacios libres
+    public void espaciosLibres() {
+        int espaciosLibres = NUMERO_MAXIMO - contactos.size();
+        if (espaciosLibres > 0) {
+            System.out.println("El número de espacios que queda son: " + espaciosLibres);
+        } else {
+            System.out.println("No hay espacios disponibles");
+        }
+    }
+}
