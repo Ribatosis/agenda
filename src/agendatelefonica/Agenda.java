@@ -21,45 +21,19 @@ public class Agenda {
     return contacto.contains(c);//busco similiud en la lista contacto de tipo Contacto
   }
 
-
-
-  public void añadirContacto(Contacto c) {
-
-    if (existeContacto(c)) { // Verificar si el contacto ya existe
-      System.out.println("El contacto con ese nombre ya existe");
-    } else if (agendaLlena()) { // Verificar si la agenda está llena
-      System.out.println("La agenda está llena, no se pueden añadir más contactos");
-    } else {
-      boolean encontrado = false;
-      for (int i = 0; i < contacto.size() && !encontrado; i++) {
-        if (contacto == null) { // Encontrar el primer espacio nulo
-          contacto.add(c); // Añadir el contacto
-          encontrado = true;
-        }
-      }
-
-      if (encontrado) {
-        System.out.println("Se ha añadido el contacto: " + c.getNombre().toUpperCase());
-      } else {
-        System.out.println("No se ha podido añadir el contacto");
-      }
+  public boolean añadirContacto(Contacto c){ //se le debe ingresar un contacto a este metodo para que funcione
+    if(agendaLlena()){ //si esta llena tampoco se puede
+      System.out.println("la agenda se encuentra llena ha superado los 10 contactos, no se pueden añadir mas contactos ");
+      return false;
     }
+    if (existeContacto(c)){//si existe tampoco se puede
+      System.out.println("el contacto ya existe, no se puede añadir ");
+      return false;
+    }//si al pasar los dos if realmente no entra entonces que se agrege
+      contacto.add(c);
+      System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
+    return true;
   }
-
-//  public boolean añadirContacto(Contacto c){ //se le debe ingresar un contacto a este metodo para que funcione
-//    if(agendaLlena()){ //si esta llena tampoco se puede
-//      System.out.println("la agenda se encuentra llena ha superado los 10 contactos, no se pueden añadir mas contactos ");
-//      return false;
-//    }
-//    if (existeContacto(c)){//si existe tampoco se puede
-//      System.out.println("el contacto ya existe, no se puede añadir ");
-//      return false;
-//    }//si al pasar los dos if realmente no entra entonces que se agrege
-//      contacto.add(c);
-//      System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
-//    return true;
-//  }
-
 
   public void listarContactos() {
     if (contacto.isEmpty()) {
@@ -71,13 +45,13 @@ public class Agenda {
     }
   }
 
-  public void buscarContacto(String nombre) {
+  public Contacto buscarContacto(String nombre) {
     for (Contacto t : contacto) {
-      if (t.getNombre().equals(nombre)) {
-        System.out.println("el telefono de "+nombre+" es: "+t.getTelefono());
+      if (t.getNombre().equalsIgnoreCase(nombre)) {
+        return t;
       }
     }
-    System.out.println( "no se encontro el contacto, verifica si existe");
+    return null;
   }
 
   public boolean eliminarContacto(Contacto c){
@@ -89,19 +63,13 @@ public class Agenda {
         return false;
       }
     }
-  public void espaciosLibres(){
+  public String espaciosLibres(){
     if(contacto.size()<numeroMaximo){
-      System.out.println("el numero de espcios que queda son: "+(numeroMaximo-contacto.size()));
+      return "el numero de espcios que queda son: "+(numeroMaximo-contacto.size());
     }else {
-      System.out.println("no hay espacios disponibles");
+     return "no hay espacios disponibles";
     }
   }
-
-
-
-
-
-
 
   }
 

@@ -1,7 +1,7 @@
 package agendatelefonica;
 
 public class Contacto {
-    private String telefono;
+    private int telefono;
     private String nombre;
 
     //constructor
@@ -9,18 +9,22 @@ public class Contacto {
         //contructor de default
     }
 
-    public Contacto(String telefono, String nombre) {
-        this.telefono = telefono;
+    public Contacto(int telefono, String nombre) {
         this.nombre = nombre;
+        if (String.valueOf(telefono).length() != 10){
+            throw new IllegalArgumentException("El número de teléfono no puede ser mayor que 10");
+        }else {
+            this.telefono=telefono;
+        }
     }
     //getter y setter
 
 
-    public String getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
