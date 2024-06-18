@@ -1,25 +1,30 @@
 package agendatelefonica;
 
 public class Contacto {
-    private String telefono;
+    private int telefono;
     private String nombre;
 
-    // Constructor por defecto
-    public Contacto() {
+    //constructor
+    public Contacto(){
+        //contructor de default
     }
 
-    // Constructor con parámetros
-    public Contacto(String telefono, String nombre) {
-        this.telefono = telefono;
+    public Contacto(int telefono, String nombre) {
         this.nombre = nombre;
+        if (String.valueOf(telefono).length() != 10){
+            throw new IllegalArgumentException("El número de teléfono no puede ser mayor que 10");
+        }else {
+            this.telefono=telefono;
+        }
     }
+    //getter y setter
 
-    // Getters y Setters
-    public String getTelefono() {
+
+    public Integer getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -31,18 +36,4 @@ public class Contacto {
         this.nombre = nombre;
     }
 
-    // Sobrescribir equals para comparar contactos por nombre
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Contacto contacto = (Contacto) obj;
-        return nombre.equalsIgnoreCase(contacto.nombre);
-    }
-
-    // Sobrescribir hashCode
-    @Override
-    public int hashCode() {
-        return nombre.toLowerCase().hashCode();
-    }
 }
