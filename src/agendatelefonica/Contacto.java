@@ -4,8 +4,16 @@ public class Contacto {
     private String telefono;
     private String nombre;
 
+
+    public boolean equals (Contacto c){
+        if (this.nombre.equalsIgnoreCase(c.getNombre())){
+            return true;
+        }
+        return false;
+    }
+
     //constructor
-    public Contacto(){
+    public Contacto(String nombre, int telefono){
         //contructor de default
     }
 

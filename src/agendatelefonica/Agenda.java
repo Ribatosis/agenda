@@ -4,10 +4,53 @@ import java.util.ArrayList;
 
 public class Agenda {
 
+  private Contacto[] contactos;
+
+public Agenda (){
+   this.contactos = new Contacto[10];
+}
+
+  // Añadir contactos
+
+  public void addContacto(Contacto c){
+
+    boolean encontrar = false;
+    for (int i=0; i< contactos.length && !encontrar; i++){
+      if (contactos[i] == null){
+        contactos[i]=c;
+        encontrar = true;
+      }
+    }
+
+    if (encontrar){
+      System.out.println("Se ha añadido");
+    }else {
+      System.out.println("No se ha podido añadir");
+    }
+  }
+
+  // Eliminar contacto
+
+  public void eliminarContacto (Contacto c){
+
+    boolean encontrar = false;
+    for (int i=0; i< contactos.length  && !encontrar; i++){
+      if (contactos[i] == null && contactos[i].equals(c)){
+        contactos[i] = null;
+        encontrar = true;
+      }else{
+        System.out.println("No se ha eliminado el contacto");
+      }
+    }
+
+  }
+
+
+
   private ArrayList<Contacto>contacto;
   private static final int numeroMaximo=10;
 
-  public Agenda() {
+  public void Agenda1() {
     this.contacto = new ArrayList<>();
   }
 
@@ -23,28 +66,28 @@ public class Agenda {
 
 
 
-  public void añadirContacto(Contacto c) {
-
-    if (existeContacto(c)) { // Verificar si el contacto ya existe
-      System.out.println("El contacto con ese nombre ya existe");
-    } else if (agendaLlena()) { // Verificar si la agenda está llena
-      System.out.println("La agenda está llena, no se pueden añadir más contactos");
-    } else {
-      boolean encontrado = false;
-      for (int i = 0; i < contacto.size() && !encontrado; i++) {
-        if (contacto == null) { // Encontrar el primer espacio nulo
-          contacto.add(c); // Añadir el contacto
-          encontrado = true;
-        }
-      }
-
-      if (encontrado) {
-        System.out.println("Se ha añadido el contacto: " + c.getNombre().toUpperCase());
-      } else {
-        System.out.println("No se ha podido añadir el contacto");
-      }
-    }
-  }
+//  public void añadirContacto(Contacto c) {
+//
+//    if (existeContacto(c)) { // Verificar si el contacto ya existe
+//      System.out.println("El contacto con ese nombre ya existe");
+//    } else if (agendaLlena()) { // Verificar si la agenda está llena
+//      System.out.println("La agenda está llena, no se pueden añadir más contactos");
+//    } else {
+//      boolean encontrado = false;
+//      for (int i = 0; i < contacto.size() && !encontrado; i++) {
+//        if (contacto == null) { // Encontrar el primer espacio nulo
+//          contacto.add(c); // Añadir el contacto
+//          encontrado = true;
+//        }
+//      }
+//
+//      if (encontrado) {
+//        System.out.println("Se ha añadido el contacto: " + c.getNombre().toUpperCase());
+//      } else {
+//        System.out.println("No se ha podido añadir el contacto");
+//      }
+//    }
+//  }
 
 //  public boolean añadirContacto(Contacto c){ //se le debe ingresar un contacto a este metodo para que funcione
 //    if(agendaLlena()){ //si esta llena tampoco se puede
@@ -80,15 +123,15 @@ public class Agenda {
     System.out.println( "no se encontro el contacto, verifica si existe");
   }
 
-  public boolean eliminarContacto(Contacto c){
-      if(contacto.remove(c)){
-        System.out.println("el contacto ha sido eliminado con exito.");
-        return true;
-      }else {
-        System.out.println("el contacto no ha sido encontrado, verifique si existe");
-        return false;
-      }
-    }
+//  public boolean eliminarContacto(Contacto c){
+ //     if(contacto.remove(c)){
+ //       System.out.println("el contacto ha sido eliminado con exito.");
+   //     return true;
+   //   }else {
+     //   System.out.println("el contacto no ha sido encontrado, verifique si existe");
+       // return false;
+     // }
+   // }
   public void espaciosLibres(){
     if(contacto.size()<numeroMaximo){
       System.out.println("el numero de espcios que queda son: "+(numeroMaximo-contacto.size()));
