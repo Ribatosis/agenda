@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea40bcbf-6b84-4da3-a16e-cb182782e1d2" name="Changes" comment="jhan avance 12:53">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agendatelefonica/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agendatelefonica/Contacto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/Contacto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agendatelefonica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agendatelefonica/MenuInteractivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/MenuInteractivo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

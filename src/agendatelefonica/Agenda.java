@@ -65,7 +65,7 @@ public class Agenda {
     }
   public String espaciosLibres(){
     if(contacto.size()<numeroMaximo){
-      return "el numero de espcios que queda son: "+(numeroMaximo-contacto.size());
+      return "el numero de espacios que quedan son: "+(numeroMaximo-contacto.size());
     }else {
      return "no hay espacios disponibles";
     }
