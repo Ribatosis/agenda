@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea40bcbf-6b84-4da3-a16e-cb182782e1d2" name="Changes" comment="jhan avance 12:53">
+      <change afterPath="$PROJECT_DIR$/src/testAgenda/TestAgenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Agenda.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agendatelefonica/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agendatelefonica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agendatelefonica/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +40,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Jhandev",
+    "git-widget-placeholder": "Jhandev",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
