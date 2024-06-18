@@ -30,8 +30,8 @@ public class Agenda {
       System.out.println("el contacto ya existe, no se puede añadir ");
       return false;
     }//si al pasar los dos if realmente no entra entonces que se agrege
-      contacto.add(c);
-      System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
+    contacto.add(c);
+    System.out.println("el contacto "+c.getNombre().toUpperCase() +" ha sido agregado correctamente ");
     return true;
   }
 
@@ -55,35 +55,20 @@ public class Agenda {
   }
 
   public boolean eliminarContacto(Contacto c){
-      if(contacto.remove(c)){
-        System.out.println("el contacto ha sido eliminado con exito.");
-        return true;
-      }else {
-        System.out.println("el contacto no ha sido encontrado, verifique si existe");
-        return false;
-      }
+    if(contacto.remove(c)){
+      System.out.println("el contacto ha sido eliminado con exito.");
+      return true;
+    }else {
+      System.out.println("el contacto no ha sido encontrado, verifique si existe");
+      return false;
     }
+  }
   public String espaciosLibres(){
     if(contacto.size()<numeroMaximo){
       return "el numero de espacios que quedan son: "+(numeroMaximo-contacto.size());
     }else {
-     return "no hay espacios disponibles";
+      return "no hay espacios disponibles";
     }
   }
 
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
